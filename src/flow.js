@@ -1,3 +1,14 @@
+const CATEGORIAS = [
+  "Pizzas",
+  "Sandwich",
+  "Arepizza",
+  "Pechuga",
+  "Panzerotti",
+  "Pasta",
+  "Stromboly",
+  "Variedades",
+];
+
 const SCREEN_RESPONSES = {
   MENU_PRINCIPAL: {
     screen: "MENU_PRINCIPAL",
@@ -76,8 +87,18 @@ export const getNextScreen = async (decryptedBody) => {
     switch (screen) {
       // handles when user submits PRODUCT_SELECTOR screen
       case "MENU_PRINCIPAL":
+        const CATEGORIAS_SELECCIONADAS = new Set(
+          data.categoria_seleccionada ?? []
+        );
+        const CATEGORIAS_CHK = CATEGORIAS.reduce((acc, id) => {
+          acc[`chk_${id}`] = CATEGORIAS_SELECCIONADAS.has(id);
+          return acc;
+        }, {});
         return {
           ...SCREEN_RESPONSES.SELECCION_PRODUCTOS,
+          data: {
+            ...CATEGORIAS_CHK,
+          },
         };
 
       case "SELECCION_PRODUCTOS":
