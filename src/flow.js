@@ -147,6 +147,7 @@ export const getNextScreen = async (decryptedBody) => {
         return {
           ...SCREEN_RESPONSES.SELECCION_PRODUCTOS,
           data: {
+            ...SCREEN_RESPONSES.SELECCION_PRODUCTOS.data,
             ...CATEGORIAS_CHK,
           },
         };
@@ -156,6 +157,7 @@ export const getNextScreen = async (decryptedBody) => {
         return {
           ...SCREEN_RESPONSES.CANTIDADES,
           data: {
+            ...SCREEN_RESPONSES.CANTIDADES.data,
             ...data,
           },
         };
