@@ -34,7 +34,57 @@ const SCREEN_RESPONSES = {
   },
   CANTIDADES: {
     screen: "CANTIDADES",
-    data: {},
+    data: {
+      chk_sa_especial: false,
+      chk_sa_filete_pollo: false,
+      chk_sa_criollo: false,
+      chk_sa_blaugrana: false,
+      chk_sa_capricho: false,
+      chk_sa_hawaiano: false,
+
+      chk_ar_especial: false,
+      chk_ar_mixta: false,
+      chk_ar_carnes: false,
+      chk_ar_pollo_jamon: false,
+      chk_ar_pollo_champ: false,
+      chk_ar_hawaiana: false,
+
+      chk_pe_tropical: false,
+      chk_pe_sls_champ: false,
+      chk_pe_sls_ciruela: false,
+      chk_pe_miel_mostaza: false,
+
+      chk_pan_especial: false,
+      chk_pan_mixto: false,
+      chk_pan_carnes: false,
+      chk_pan_blaugrana: false,
+      chk_pan_pollo_jamon: false,
+      chk_pan_pollo_champ: false,
+      chk_pan_pollo_camaron: false,
+      chk_pan_hawaiano: false,
+
+      chk_esp_tradicional: false,
+      chk_esp_tradicional_gratinado: false,
+      chk_esp_especial: false,
+      chk_las_especial: false,
+      chk_las_palles: false,
+      chk_las_tradicional: false,
+      chk_canelones: false,
+
+      chk_str_especial: false,
+      chk_str_carnes: false,
+      chk_str_blaugrana: false,
+      chk_str_pollo_jamon: false,
+      chk_str_pollo_champ: false,
+      chk_str_hawaiano: false,
+
+      chk_maiz_tradicional: false,
+      chk_maiz_especial: false,
+      chk_maduro_tradicional: false,
+      chk_menu_infantil: false,
+      chk_papas_locas: false,
+      chk_papas_francesa: false,
+    },
   },
   BEBIDAS: {
     screen: "BEBIDAS",
@@ -97,7 +147,6 @@ export const getNextScreen = async (decryptedBody) => {
         return {
           ...SCREEN_RESPONSES.SELECCION_PRODUCTOS,
           data: {
-            ...SCREEN_RESPONSES.SELECCION_PRODUCTOS.data,
             ...CATEGORIAS_CHK,
           },
         };
@@ -106,6 +155,9 @@ export const getNextScreen = async (decryptedBody) => {
         // TODO here process user selected preferences and return customised offer
         return {
           ...SCREEN_RESPONSES.CANTIDADES,
+          data: {
+            ...data,
+          },
         };
 
       case "CANTIDADES":
