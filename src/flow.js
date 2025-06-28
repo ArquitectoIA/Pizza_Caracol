@@ -1,5 +1,5 @@
 const CATEGORIAS = [
-  "pizzas",
+  "pizza",
   "sandwich",
   "arepizza",
   "pechuga",
