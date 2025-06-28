@@ -1,12 +1,12 @@
 const CATEGORIAS = [
-  "Pizzas",
-  "Sandwich",
-  "Arepizza",
-  "Pechuga",
-  "Panzerotti",
-  "Pasta",
-  "Stromboly",
-  "Variedades",
+  "pizzas",
+  "sandwich",
+  "arepizza",
+  "pechuga",
+  "panzerotti",
+  "pasta",
+  "stromboly",
+  "variedades",
 ];
 
 const SCREEN_RESPONSES = {
@@ -17,7 +17,7 @@ const SCREEN_RESPONSES = {
   SELECCION_PRODUCTOS: {
     screen: "SELECCION_PRODUCTOS",
     data: {
-      chk_can_pizza: true,
+      chk_pizza: false,
       chk_pizza_1: false,
       chk_pizza_2: false,
       chk_pizza_3: false,
@@ -97,6 +97,7 @@ export const getNextScreen = async (decryptedBody) => {
         return {
           ...SCREEN_RESPONSES.SELECCION_PRODUCTOS,
           data: {
+            ...SCREEN_RESPONSES.SELECCION_PRODUCTOS.data,
             ...CATEGORIAS_CHK,
           },
         };
