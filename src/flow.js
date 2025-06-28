@@ -35,6 +35,12 @@ const SCREEN_RESPONSES = {
   CANTIDADES: {
     screen: "CANTIDADES",
     data: {
+      chk_sabor_2: false,
+      chk_sabor_4: false,
+      chk_sabor_6: false,
+      chk_sabor_8: false,
+      chk_sabor_10: false,
+
       chk_sa_especial: false,
       chk_sa_filete_pollo: false,
       chk_sa_criollo: false,
